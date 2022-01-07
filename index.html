@@ -8,7 +8,7 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <script type="module" src="./script.js"></script>
+
     <header>
       <div class="container">
         <div class="nav">
@@ -21,7 +21,7 @@
               <form id="myForm">
                 <input type="file" id="jsonFile" accept=".json"/>
                 <br />
-                <input type="submit" value="Submit"/>
+                <input onclick="submitted()" type="submit" value="Submit"/>
               </form>
             <div>
           </div>
@@ -43,5 +43,6 @@
       </div>
       <div class="flashcards"></div>
     </div>
+    <script src="script.js"></script>
   </body>
 </html> 
