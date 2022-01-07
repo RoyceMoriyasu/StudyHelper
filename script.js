@@ -70,7 +70,7 @@ function hideCreateBox(){
 
 //create a user-defined function to download JSON file 
 function exportToJsonFile() {
-    let dataStr = JSON.parse(localStorage.getItem('items'))
+    let dataStr = JSON.stringify(localStorage)
     let dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
 
     let exportFileDefaultName = 'data.json';
