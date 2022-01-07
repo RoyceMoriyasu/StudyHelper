@@ -65,7 +65,7 @@ function hideCreateBox(){
 
 //create a user-defined function to download JSON file 
 function exportToJsonFile() {
-  let dataStr = JSON.stringify(localStorage)
+  let dataStr = localStorage.getItem('items');
   let dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
   let exportFileDefaultName = 'data.json';
 
@@ -82,7 +82,7 @@ function readJson() {
     fileReader.onload = function(fileLoadedEvent) 
     {
       var textFromFileLoaded = fileLoadedEvent.target.result;
-      console.log(textFromFileLoaded);
+      localStorage.setItem('items', textFromFileLoaded);
     };
     fileReader.readAsText(fileToLoad, "UTF-8");
 }
