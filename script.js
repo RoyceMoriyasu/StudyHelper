@@ -1,8 +1,3 @@
-const fileSelector = document.getElementById('jsonFile');
-fileSelector.addEventListener('change', (event) => {
-  const fileList = event.target.files;
-  console.log(fileList);
-});
 const flashcards = document.getElementsByClassName("flashcards")[0];
 const createBox = document.getElementsByClassName("create-box")[0];
 const question = document.getElementById("question");
@@ -70,27 +65,24 @@ function hideCreateBox(){
 
 //create a user-defined function to download JSON file 
 function exportToJsonFile() {
-    let dataStr = JSON.stringify(localStorage)
-    let dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+  let dataStr = JSON.stringify(localStorage)
+  let dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+  let exportFileDefaultName = 'data.json';
 
-    let exportFileDefaultName = 'data.json';
-
-    let linkElement = document.createElement('a');
-    linkElement.setAttribute('href', dataUri);
-    linkElement.setAttribute('download', exportFileDefaultName);
-    linkElement.click();
+  let linkElement = document.createElement('a');
+  linkElement.setAttribute('href', dataUri);
+  linkElement.setAttribute('download', exportFileDefaultName);
+  linkElement.click();
 }
 
 function readJson() {
-  let json = JSON.stringify(fileSelector);
-
-  const blob = new Blob([json], {type:"application/json"});
-
-  const fr = new FileReader();
-
-  fr.addEventListener("load", e => {
-    console.log(e.target.result, JSON.parse(fr.result))
-  });
-
-  fr.readAsText(blob);
+   var fileToLoad = document.getElementById("jsonFile").files[0];
+ 
+    var fileReader = new FileReader();
+    fileReader.onload = function(fileLoadedEvent) 
+    {
+      var textFromFileLoaded = fileLoadedEvent.target.result;
+      console.log(textFromFileLoaded);
+    };
+    fileReader.readAsText(fileToLoad, "UTF-8");
 }
