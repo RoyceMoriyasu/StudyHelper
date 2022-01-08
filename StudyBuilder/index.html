@@ -16,11 +16,10 @@
           <div>
             <button onclick="showCreateCardBox()">New Card</button>
             <button onclick="delFlashcards()">Delete Cards</button>
+            <button onclick="exportToJsonFile()"> Download Cards </button>
             <div>
-              <button onclick="exportToJsonFile()"> Download Cards </button>
               <form id="myForm">
                 <input type="file" id="jsonFile" accept=".json"/>
-                <br />
                 <input onclick="submitted()" type="submit" value="Submit"/>
               </form>
             <div>
