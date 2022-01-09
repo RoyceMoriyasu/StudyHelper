@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
 
+:root{
+  --cultured: #fcfafaff;
+  --light-gray: #c8d3d5ff;
+  --cadet-blue-crayola: #a4b8c4ff;
+  --steel-teal: #6e8387ff;
+  --dark-pastel-green: #0cca4aff;
+}
+
 *{
   padding: 0;
   margin: 0;
